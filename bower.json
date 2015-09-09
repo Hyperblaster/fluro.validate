@@ -1,0 +1,25 @@
+{
+  "name": "fluro-validate",
+  "description": "A package of helpful services for validating submissions to fluro",
+  "homepage": "http://fluro.io",
+  "authors": [
+    "Cade Embery"
+  ],
+  "main": "./dist/fluro.validate.min.js",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Hyperblaster/fluro.validate.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "validator-js": "~3.39.0"
+  }
+}

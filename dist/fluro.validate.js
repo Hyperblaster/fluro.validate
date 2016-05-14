@@ -87,13 +87,17 @@ angular.module('fluro.validate')
                 }
             }
 
-            //If there is a specified list of allowed values
-            if (field.allowedValues && field.allowedValues.length) {
-                var allowed = _.contains(field.allowedValues, entry);
 
-                if (!allowed) {
-                    //console.log(entry, 'is not a valid value for field', field.key)
-                    return false;
+            //If the user has provided a value then check if its in the allowed values
+            if (entry) {
+                //If there is a specified list of allowed values
+                if (field.allowedValues && field.allowedValues.length) {
+                    var allowed = _.contains(field.allowedValues, entry);
+
+                    if (!allowed) {
+                        //console.log(entry, 'is not a valid value for field', field.key)
+                        return false;
+                    }
                 }
             }
         }

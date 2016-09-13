@@ -1,6 +1,6 @@
 {
-  "name": "fluro-validate",
-  "description": "A package of helpful services for validating submissions to fluro",
+  "name": "fluro.validate",
+  "description": "A help service for validating data for fluro",
   "homepage": "http://fluro.io",
   "authors": [
     "Cade Embery"

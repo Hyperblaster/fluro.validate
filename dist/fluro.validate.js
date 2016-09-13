@@ -133,8 +133,9 @@ angular.module('fluro.validate')
             case 'integer':
                 return validator.isInt(field);
                 break;
+            case 'decimal':
             case 'float':
-                return validator.isFloat(field);
+                return validator.isDecimal(field);
                 break;
             case 'string':
                 return _.isString(field);

@@ -108,6 +108,8 @@ angular.module('fluro.validate')
                             return false;
                         }
                     }
+
+                    console.log('allowed is fine');
                 }
             }
 

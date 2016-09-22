@@ -15,13 +15,14 @@ angular.module('fluro.validate')
 
             //Required
             if (field.minimum > 0 && !entry) {
-                console.log(field.key, 'is required', entry)
+                // console.log(field.key, 'is required', entry)
                 return false;
             }
 
             //Check if the value is an array or a value
             if (_.isArray(entry)) {
 
+                console.log('Its an array', entry)
                 //Run tests on array
                 var array = entry;
 

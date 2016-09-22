@@ -11,7 +11,7 @@ angular.module('fluro.validate')
 
         controller.validate = function(entry, field) {
 
-            //  console.log('VALIDATE', entry, field)
+             console.log('VALIDATE', entry, field)
 
             //Required
             if (field.minimum > 0 && !entry) {

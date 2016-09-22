@@ -22,7 +22,6 @@ angular.module('fluro.validate')
             //Check if the value is an array or a value
             if (_.isArray(entry)) {
 
-                console.log('Its an array', entry)
                 //Run tests on array
                 var array = entry;
 
@@ -73,6 +72,9 @@ angular.module('fluro.validate')
                 }
 
             } else {
+
+
+                console.log('Entry field', entry, field);
 
                 //Check against singular value
                 if (field.minimum > 1) {

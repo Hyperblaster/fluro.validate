@@ -11,11 +11,11 @@ angular.module('fluro.validate')
 
         controller.validate = function(entry, field) {
 
-             // console.log('VALIDATE', entry, field)
+             // //console.log('VALIDATE', entry, field)
 
             //Required
             if (field.minimum > 0 && !entry) {
-                // console.log(field.key, 'is required', entry)
+                // //console.log(field.key, 'is required', entry)
                 return false;
             }
 
@@ -26,18 +26,18 @@ angular.module('fluro.validate')
                 var array = entry;
 
                 if (field.minimum == 1 && field.maximum == 1 && field.type != 'array') {
-                    //console.log(field.key, 'array provided when a single value was expected')
+                    ////console.log(field.key, 'array provided when a single value was expected')
                     return false; //Require a singular value not an array
                 }
 
                 if (array.length < field.minimum) {
-                    //console.log(field.key, 'requires at least', field.minimum, 'values')
+                    ////console.log(field.key, 'requires at least', field.minimum, 'values')
                     return false;
                 }
 
                 if (field.maximum) {
                     if (array.length > field.maximum) {
-                        //console.log(field.key, 'requires less than', field.maximum, 'values')
+                        ////console.log(field.key, 'requires less than', field.maximum, 'values')
                         return false;
                     }
                 }
@@ -57,28 +57,28 @@ angular.module('fluro.validate')
                     var correctType = controller.validateType(obj, field.type);
 
                     if (allowed && correctType) {
-                        //console.log('CORRECT TYPE', allowed, correctType)
+                        ////console.log('CORRECT TYPE', allowed, correctType)
                         return false;
                     } else {
-                        //console.log(obj, 'is not a valid value for ', field.key, 'TESTING', allowed, field.type)
+                        ////console.log(obj, 'is not a valid value for ', field.key, 'TESTING', allowed, field.type)
                         return true;
                     }
                 });
 
 
                 if (invalidEntries.length) {
-                    // console.log('Invalid', invalidEntries.length)
+                    // //console.log('Invalid', invalidEntries.length)
                     return false;
                 }
 
             } else {
 
 
-                // console.log('Entry field', entry, field);
+                // //console.log('Entry field', entry, field);
 
                 //Check against singular value
                 if (field.minimum > 1) {
-                    //console.log(field.key, 'Must be provided as an array not a singular value')
+                    ////console.log(field.key, 'Must be provided as an array not a singular value')
                     //Must have an array
                     return false;
                 }
@@ -86,7 +86,7 @@ angular.module('fluro.validate')
                 if (field.minimum > 0) {
                     var correctType = controller.validateType(entry, field.type);
                     if (!correctType) {
-                        console.log(field.key, 'Must be provided as an ' + field.type + ' type value', entry, 'was provided')
+                        //console.log(field.key, 'Must be provided as an ' + field.type + ' type value', entry, 'was provided')
                         return false;
                     }
                 }
@@ -95,26 +95,26 @@ angular.module('fluro.validate')
                 //If the user has provided a value then check if its in the allowed values
                 if (entry) {
 
-                    console.log('check if allowed');
+                    //console.log('check if allowed');
 
                     //If there is a specified list of allowed values
                     if (field.allowedValues && field.allowedValues.length) {
                         var allowed = _.contains(field.allowedValues, entry);
 
 
-                        console.log('allowed', field.allowedValues);
+                        //console.log('allowed', field.allowedValues);
                         if (!allowed) {
-                            console.log(entry, 'is not a valid singular value for field', field.key)
+                            //console.log(entry, 'is not a valid singular value for field', field.key)
                             return false;
                         }
                     }
 
-                    console.log('allowed is fine');
+                    //console.log('allowed is fine');
                 }
             }
 
 
-            console.log('return true!')
+            //console.log('return true!')
             return true;
 
         }
@@ -142,11 +142,11 @@ angular.module('fluro.validate')
                 case 'decimal':
                 case 'float':
                 case 'number':
-                    // console.log('Validate Number', field, validator.isDecimal(field), validator.isInt(field));
+                    // //console.log('Validate Number', field, validator.isDecimal(field), validator.isInt(field));
 
                     var numberised = Number(field);
                     var isActual = (_.isFinite(numberised) && !_.isNaN(numberised));
-                    console.log('Numberised', numberised, isActual);
+                    //console.log('Numberised', numberised, isActual);
 
                     return isActual;//validator.isDecimal(field) || validator.isInt(field);
                     break;
@@ -154,7 +154,7 @@ angular.module('fluro.validate')
                     return validator.isInt(field);
                     break;
                
-                // // console.log('Validate decimal float', field, validator.isDecimal(field));
+                // // //console.log('Validate decimal float', field, validator.isDecimal(field));
                 //     return validator.isDecimal(field);
                 //     break;
                 case 'string':

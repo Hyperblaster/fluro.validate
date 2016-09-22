@@ -135,7 +135,7 @@ angular.module('fluro.validate')
 
                     var numberised = Number(field);
 
-                    console.log('Numberised', numberised)
+                    console.log('Numberised', numberised, _.isFinite(numberised), !_.isNaN(numberised))
 
                     return (_.isFinite(numberised) && !_.isNaN(numberised));//validator.isDecimal(field) || validator.isInt(field);
                     break;

@@ -2,8 +2,6 @@
 console.log('Fluro Validate ha updated');
 
 angular.module('fluro.validate', []);
-console.log('UPDATED');
-
 angular.module('fluro.validate')
     .service('FluroValidate', function() {
 
@@ -148,7 +146,7 @@ angular.module('fluro.validate')
 
                     var numberised = Number(field);
                     var isActual = (_.isFinite(numberised) && !_.isNaN(numberised));
-                    console.log('Numberised', numberised, isActual);
+                    // console.log('Numberised', numberised, isActual);
 
                     return isActual;//validator.isDecimal(field) || validator.isInt(field);
                     break;

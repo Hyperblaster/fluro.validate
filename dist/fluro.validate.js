@@ -114,6 +114,7 @@ angular.module('fluro.validate')
             }
 
 
+            console.log('return true!')
             return true;
 
         }

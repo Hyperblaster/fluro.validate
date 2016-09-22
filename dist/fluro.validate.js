@@ -67,7 +67,7 @@ angular.module('fluro.validate')
 
 
                 if (invalidEntries.length) {
-                    console.log('Invalid', invalidEntries.length)
+                    // console.log('Invalid', invalidEntries.length)
                     return false;
                 }
 
@@ -96,7 +96,7 @@ angular.module('fluro.validate')
                         var allowed = _.contains(field.allowedValues, entry);
 
                         if (!allowed) {
-                            //console.log(entry, 'is not a valid singular value for field', field.key)
+                            console.log(entry, 'is not a valid singular value for field', field.key)
                             return false;
                         }
                     }
@@ -134,10 +134,10 @@ angular.module('fluro.validate')
                     // console.log('Validate Number', field, validator.isDecimal(field), validator.isInt(field));
 
                     var numberised = Number(field);
+                    var isActual = (_.isFinite(numberised) && !_.isNaN(numberised));
+                    console.log('Numberised', numberised, isActual);
 
-                    // console.log('Numberised', numberised, _.isFinite(numberised), !_.isNaN(numberised))
-
-                    return (_.isFinite(numberised) && !_.isNaN(numberised));//validator.isDecimal(field) || validator.isInt(field);
+                    return isActual;//validator.isDecimal(field) || validator.isInt(field);
                     break;
                 case 'integer':
                     return validator.isInt(field);

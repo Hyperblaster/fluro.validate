@@ -133,7 +133,7 @@ angular.module('fluro.validate')
                 case 'number':
                     // console.log('Validate Number', field, validator.isDecimal(field), validator.isInt(field));
 
-                    var numberised = _.toNumber(field);
+                    var numberised = Number(field);
 
                     console.log('Numberised', numberised)
 

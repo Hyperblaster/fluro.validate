@@ -48,7 +48,7 @@ angular.module('fluro.validate')
 
                     //If there is a specified list of allowed values
                     if (field.allowedValues && field.allowedValues.length) {
-                        allowed = _.contains(field.allowedValues, obj);
+                        allowed = _.includes(field.allowedValues, obj);
                     }
 
                     //Check if each entry is a valid value
@@ -97,7 +97,7 @@ angular.module('fluro.validate')
 
                     //If there is a specified list of allowed values
                     if (field.allowedValues && field.allowedValues.length) {
-                        var allowed = _.contains(field.allowedValues, entry);
+                        var allowed = _.includes(field.allowedValues, entry);
 
 
                         //console.log('allowed', field.allowedValues);

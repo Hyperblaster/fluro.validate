@@ -134,6 +134,9 @@ angular.module('fluro.validate')
                 case 'url':
                     return validator.isURL(field);
                     break;
+                case 'upload':
+                    return true;
+                    break;
                 case 'array':
                     return _.isArray(field);
                     break;

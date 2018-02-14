@@ -9,7 +9,7 @@ angular.module('fluro.validate')
 
         controller.validate = function(entry, field) {
 
-             // //console.log('VALIDATE', entry, field)
+            // //console.log('VALIDATE', entry, field)
 
             //Required
             if (field.minimum > 0 && !entry) {
@@ -135,6 +135,8 @@ angular.module('fluro.validate')
                     return validator.isURL(field);
                     break;
                 case 'upload':
+                    console.log('Validate All Upload Fields', field);
+
                     return true;
                     break;
                 case 'array':
@@ -149,15 +151,15 @@ angular.module('fluro.validate')
                     var isActual = (_.isFinite(numberised) && !_.isNaN(numberised));
                     // console.log('Numberised', numberised, isActual);
 
-                    return isActual;//validator.isDecimal(field) || validator.isInt(field);
+                    return isActual; //validator.isDecimal(field) || validator.isInt(field);
                     break;
                 case 'integer':
                     return validator.isInt(field);
                     break;
-               
-                // // //console.log('Validate decimal float', field, validator.isDecimal(field));
-                //     return validator.isDecimal(field);
-                //     break;
+
+                    // // //console.log('Validate decimal float', field, validator.isDecimal(field));
+                    //     return validator.isDecimal(field);
+                    //     break;
                 case 'string':
                     return _.isString(field);
                     break;

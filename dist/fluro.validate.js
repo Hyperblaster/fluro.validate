@@ -123,7 +123,7 @@ angular.module('fluro.validate')
             switch (fieldType.toLowerCase()) {
                 case 'reference':
 
-
+                    console.log('CHECK REFERENCE', field, fieldType, directive);
                     if (_.isString(field)) {
                         return validator.isMongoId(field);
                     } else {

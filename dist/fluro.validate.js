@@ -124,6 +124,8 @@ angular.module('fluro.validate')
                 case 'reference':
 
                     if(directive == 'upload') {
+
+                        console.log('VALID UPLOAD', directive, field);
                         return _.get(field,'attachmentID');
                     } else {
                         if (_.isString(field)) {
